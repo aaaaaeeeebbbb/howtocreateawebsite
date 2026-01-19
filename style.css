@@ -1,0 +1,52 @@
+#title {
+    
+    font-size: 100px;
+    text-align: center;
+    padding-top: 70px;
+}
+.languages{
+    justify-content: center;
+    font-size: 50px;
+    display:flex;
+    gap:20px;
+    
+    #html{
+        background-color:orange;
+    }
+    #css{
+        background-color:cornflowerblue;
+    }
+    #javascript{
+        background-color:rgb(224, 224, 48);
+    }
+}
+.p2paragraph p { 
+    display: block;
+    width:40%;
+    
+    
+}
+.htmlparagraph p { 
+    display: block;
+    width:10%;
+    
+    
+}
+.back-button {
+    position: fixed;      
+    top: 20px;           
+    right: 20px;          
+    padding: 10px 20px;   
+    background-color: limegreen;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none; 
+    font-size: 18px;
+    z-index: 1000;        
+
+.back-button:hover {
+    background-color: green;
+    cursor: pointer;
+}
+}
