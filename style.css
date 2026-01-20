@@ -50,3 +50,21 @@
     cursor: pointer;
 }
 }
+
+.languagebutton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    z-index: 1000;
+}
+
+.languagebutton:hover {
+    background-color: darkblue;
+    cursor: pointer;
+}
