@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Template</title>
+    <a href="indexfr.html" class="back-button">Accueil</a>
+   
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            padding: 20px;
+        }
+        .quiz-container {
+            background-color: #fff;
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #result {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz</h1>
+
+        
+        <div class="question">
+            <p>1. Quelles 3 langages sont généralement utilisés pour créer des sites web ?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> HTML, CSS, JavaScript</label>
+                <label><input type="radio" name="q1" value="b"> HTML, Lua, Python</label>
+                <label><input type="radio" name="q1" value="c"> CSS, C#, C++</label>
+                <label><input type="radio" name="q1" value="d"> HTML, CSS, Java</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. Lequel de ces tags n’a pas besoin d’une balise de fermeture ?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> p</label>
+                <label><input type="radio" name="q2" value="b"> br</label>
+                <label><input type="radio" name="q2" value="c"> h1</label>
+                <label><input type="radio" name="q2" value="d"> a </label>
+            </div>
+        </div>
+
+        <div class="question">
+    <p>3. Dans quelle section lie-t-on une feuille de style ?</p>
+    <div class="options">
+        <label><input type="radio" name="q3" value="a"> Head</label>
+        <label><input type="radio" name="q3" value="b"> Body</label>
+        <label><input type="radio" name="q3" value="c"> À la fin</label>
+        <label><input type="radio" name="q3" value="d"> DOCTYPE</label>
+    </div>
+</div>
+
+<div class="question">
+    <p>4. Que peut faire JavaScript de manière réaliste ?</p>
+    <div class="options">
+        <label><input type="radio" name="q4" value="a"> Structurer le site web</label>
+        <label><input type="radio" name="q4" value="b"> Appliquer des styles aux éléments HTML</label>
+        <label><input type="radio" name="q4" value="c"> Rendre le site plus dynamique / interactif</label>
+        <label><input type="radio" name="q4" value="d"> Créer des paragraphes ou des titres</label>
+    </div>
+</div>
+
+<div class="question">
+    <p>5. Lequel de ces noms ne fonctionne PAS comme nom valide pour un fichier HTML ?</p>
+    <div class="options">
+        <label><input type="radio" name="q5" value="a"> index.html</label>
+        <label><input type="radio" name="q5" value="b"> style.html</label>
+        <label><input type="radio" name="q5" value="c"> css.html</label>
+        <label><input type="radio" name="q5" value="d"> html.css</label>
+    </div>
+</div>
+
+        <button onclick="checkAnswers()">Submit Quiz</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+
+           
+            const answers = {
+                q1: 'a', 
+                q2: 'b', 
+                q3: 'a',
+                q4: 'c',
+                q5: 'd',
+            };
+
+            for (let q in answers) {
+                let selected = document.querySelector(`input[name="${q}"]:checked`);
+                if (selected && selected.value === answers[q]) {
+                    score++;
+                }
+            }
+
+            const total = Object.keys(answers).length;
+            document.getElementById('result').innerText = `Vous avez obtenu ${score} sur ${total} !`;
+        }
+    </script>
+</body>
+</html>
